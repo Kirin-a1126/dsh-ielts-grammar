@@ -2,7 +2,7 @@
 
 一个带左侧栏入口的 DeepSeek Harness 插件：在 DSH 内直接检查雅思 Task 2 草稿的高频语法问题，并把基础词汇升级为更准确的学术表达。
 
-[English README](./README.en.md) · [GitHub](https://github.com/Kirin-a1126/dsh-ielts-grammar) · [npm package](https://www.npmjs.com/package/dsh-ielts-grammar)
+[English README](./README.en.md) · [GitHub](https://github.com/Kirin-a1126/dsh-ielts-grammar) · [Release v1.0.0](https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.0)
 
 ![icon](./icon.svg)
 
@@ -41,18 +41,12 @@
 
 ### 从插件市场安装
 
-插件发布到 npm 后，可在 DSH 的 **插件 → 市场 / 发现** 中搜索：
+在 DSH 的 **插件 → 市场 / 发现** 中搜索：
 
 - 中文：**雅思语法与同义替换**
 - English: **IELTS Grammar & Lexis**
 
-也可以在终端中安装 npm 包：
-
-```bash
-dsh plugin add dsh-ielts-grammar
-```
-
-安装后侧栏入口 id 为 `ielts-grammar`。若入口没有立即出现，刷新 DSH Web 页面。
+市场的预构建安装包来自 [GitHub Release v1.0.0](https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.0)，不需要额外从源码构建。安装后侧栏入口 id 为 `ielts-grammar`；若入口没有立即出现，刷新 DSH Web 页面。
 
 ### 本地开发安装
 

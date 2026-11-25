@@ -28,7 +28,8 @@ The plugin adds a sidebar workspace that checks IELTS Writing Task 2 drafts for
 high-frequency grammar and spelling errors, offers one-click fixes, and suggests
 curated academic synonyms and expressions. Analysis is local: it uses a Host
 route and British/American Hunspell dictionaries, with no model call or external
-upload.
+upload. A prebuilt `v1.0.0` tarball is attached to the GitHub Release and is
+declared in the entry.
 ```
 
 ## 提交前检查

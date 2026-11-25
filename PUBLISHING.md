@@ -20,13 +20,20 @@
 https://github.com/Kirin-a1126/dsh-ielts-grammar
 ```
 
+当前 `v1.0.0` 已发布为 GitHub Release 预构建包：
+
+```text
+https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.0
+```
+
+市场安装会优先使用这个 tarball；npm 发布是后续可选步骤，不是上架硬性条件。
+
 仍需你完成：
 
-1. 把代码上传到这个目前为空的仓库。
-2. 你的 npm 账号与一次性发布授权。
-3. 至少等待仓库创建满 24 小时，才能向 awesome-dsh-plugin 提 PR。
-4. 一张真实界面截图（不是硬性门槛，但市场展示更好）。
-5. 在各市场的实际提交动作。
+1. 等待仓库创建满 24 小时，才能向 awesome-dsh-plugin 提 PR。
+2. （可选）注册 npm 账号并发布 npm 包。
+3. （可选）添加真实界面截图。
+4. 在各市场完成实际提交动作。
 
 ## 1. 发布前本地检查
 

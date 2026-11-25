@@ -4,7 +4,7 @@ A DeepSeek Harness plugin with a dedicated sidebar workspace for checking IELTS
 Writing Task 2 drafts and upgrading basic wording to more precise academic
 English.
 
-[中文说明](./README.md) · [GitHub](https://github.com/Kirin-a1126/dsh-ielts-grammar) · [npm package](https://www.npmjs.com/package/dsh-ielts-grammar)
+[中文说明](./README.md) · [GitHub](https://github.com/Kirin-a1126/dsh-ielts-grammar) · [Release v1.0.0](https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.0)
 
 ![icon](./icon.svg)
 
@@ -54,12 +54,9 @@ high-confidence common correction exists. Technical terms can be added to
 
 ## Install
 
-From the DSH plugin market, search for **IELTS Grammar & Lexis**, or install the
-npm package:
-
-```bash
-dsh plugin add dsh-ielts-grammar
-```
+From the DSH plugin market, search for **IELTS Grammar & Lexis**. The storefront
+uses the prebuilt [GitHub Release v1.0.0](https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.0)
+package, so no build step is needed.
 
 Local development install:
 
