@@ -1,0 +1,76 @@
+{
+  "name": "dsh-ielts-grammar",
+  "version": "1.0.0",
+  "description": "IELTS grammar checker and academic synonym replacer for DeepSeek Harness with a dedicated sidebar workspace.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "ielts",
+    "ielts-writing",
+    "grammar",
+    "grammar-checker",
+    "spell-check",
+    "synonym",
+    "writing"
+  ],
+  "author": "dsh-ielts-grammar contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kirin-a1126/dsh-ielts-grammar.git"
+  },
+  "homepage": "https://github.com/Kirin-a1126/dsh-ielts-grammar#readme",
+  "bugs": {
+    "url": "https://github.com/Kirin-a1126/dsh-ielts-grammar/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "dictionary-en": "^4.0.0",
+    "dictionary-en-gb": "^3.0.0",
+    "nspell": "^2.1.5"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/analyzer.js",
+    "lib/lexicon.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "PUBLISHING.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node --test test/analyzer.test.mjs test/client.test.mjs test/host.test.mjs",
+    "prepublishOnly": "node --test test/analyzer.test.mjs test/client.test.mjs test/host.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}
