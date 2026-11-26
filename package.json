@@ -1,6 +1,6 @@
 {
   "name": "dsh-ielts-grammar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "IELTS grammar checker and academic synonym replacer for DeepSeek Harness with a dedicated sidebar workspace.",
   "keywords": [
     "dsh-plugin",

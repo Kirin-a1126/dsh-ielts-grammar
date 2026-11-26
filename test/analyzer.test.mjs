@@ -248,6 +248,22 @@ test('British and American spellings and proper nouns do not raise spelling alar
   assert.equal(result.grammar.filter((issue) => issue.category === 'spelling').length, 0)
 })
 
+test('first-person I takes the base verb, including irregular forms', () => {
+  const text = 'I needs to know. I has a question. I is ready. I studies English and I goes home. If I were you, I would wait.'
+  const result = analyze(text)
+  const firstPerson = issuesByCode(result, 'subject-verb-first-person')
+  const suggestions = Object.fromEntries(firstPerson.map((issue) => [issue.original, issue.suggestions[0]]))
+
+  assert.equal(suggestions.needs, 'need')
+  assert.equal(suggestions.has, 'have')
+  assert.equal(suggestions.is, 'am')
+  assert.equal(suggestions.studies, 'study')
+  assert.equal(suggestions.goes, 'go')
+  assert.equal(firstPerson.length, 5)
+  assert.equal(result.grammar.filter((issue) => issue.original === 'were').length, 0)
+  assert.equal(result.grammar.filter((issue) => issue.original === 'would').length, 0)
+})
+
 test('every issue exposes a stable bilingual shape for the UI', () => {
   const result = analyze(SAMPLE)
   for (const issue of result.grammar) {
