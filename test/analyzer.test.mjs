@@ -277,6 +277,23 @@ test('third-person singular pronouns require the -s verb form', () => {
   assert.equal(result.grammar.filter((issue) => issue.code !== 'subject-verb-third-person-base').length, 0)
 })
 
+test('relative clauses and not only … but also … are checked', () => {
+  const text = "Many experts, who argues that excessive reliance may cause problems, believes that the negative consequences will not only affect individuals who lacks digital skills, but also creates challenges."
+  const result = analyze(text)
+  const byWord = Object.fromEntries(result.grammar.map((issue) => [issue.original, issue]))
+
+  assert.equal(byWord.argues?.suggestions[0], 'argue')
+  assert.equal(byWord.argues?.code, 'plural-relative-verb')
+  assert.equal(byWord.believes?.suggestions[0], 'believe')
+  assert.equal(byWord.believes?.code, 'plural-relative-main-verb')
+  assert.equal(byWord.lacks?.suggestions[0], 'lack')
+  assert.equal(byWord.creates?.suggestions[0], 'create')
+  assert.equal(byWord.creates?.code, 'not-only-but-also-parallel')
+
+  const clean = analyze('Many experts, who argue that technology matters, believe that policy should change. The policy will not only affect workers but also create problems.')
+  assert.equal(clean.grammar.length, 0)
+})
+
 test('every issue exposes a stable bilingual shape for the UI', () => {
   const result = analyze(SAMPLE)
   for (const issue of result.grammar) {

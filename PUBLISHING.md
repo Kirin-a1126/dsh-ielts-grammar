@@ -20,10 +20,10 @@
 https://github.com/Kirin-a1126/dsh-ielts-grammar
 ```
 
-当前 `v1.0.2` 已发布为 GitHub Release 预构建包：
+当前 `v1.0.3` 已发布为 GitHub Release 预构建包：
 
 ```text
-https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.2
+https://github.com/Kirin-a1126/dsh-ielts-grammar/releases/tag/v1.0.3
 ```
 
 市场安装会优先使用这个 tarball；npm 发布是后续可选步骤，不是上架硬性条件。
