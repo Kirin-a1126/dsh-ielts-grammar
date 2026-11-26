@@ -264,6 +264,19 @@ test('first-person I takes the base verb, including irregular forms', () => {
   assert.equal(result.grammar.filter((issue) => issue.original === 'would').length, 0)
 })
 
+test('third-person singular pronouns require the -s verb form', () => {
+  const text = 'She need to know. He want to go. She study English. Does she need to know? She need not worry. This need is urgent. She needs to know.'
+  const result = analyze(text)
+  const issues = issuesByCode(result, 'subject-verb-third-person-base')
+  const suggestions = Object.fromEntries(issues.map((issue) => [issue.original, issue.suggestions[0]]))
+
+  assert.equal(suggestions.need, 'needs')
+  assert.equal(suggestions.want, 'wants')
+  assert.equal(suggestions.study, 'studies')
+  assert.equal(issues.length, 3)
+  assert.equal(result.grammar.filter((issue) => issue.code !== 'subject-verb-third-person-base').length, 0)
+})
+
 test('every issue exposes a stable bilingual shape for the UI', () => {
   const result = analyze(SAMPLE)
   for (const issue of result.grammar) {
